@@ -24,7 +24,7 @@ namespace chatbot_part_2
             }
             catch
             {
-            }
+            }//
         }//
     }
 }
