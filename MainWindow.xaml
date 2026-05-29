@@ -1,0 +1,154 @@
+﻿<Window x:Class="talkly_part_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ChatBot - Cybersecurity Awareness"
+        Height="600"
+        Width="900"
+        Background="#EEF7F4"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+        <!-- ================= CHAT SCREEN ================= -->
+
+        <Grid x:Name="ChatScreen" Visibility="Collapsed">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Border Grid.Row="0"
+                    Background="White"
+                    Padding="15">
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+
+                    <Image Source="logo.png"
+                           Width="40"
+                           Height="40"
+                           Margin="0,0,10,0"/>
+
+                    <TextBlock Text="CHATBOT LIVE CHAT"
+                               Foreground="#1E5AA8"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Chat History -->
+            <Border Grid.Row="1"
+                    Margin="20"
+                    Background="White"
+                    CornerRadius="15"
+                    Padding="15">
+
+                <ScrollViewer x:Name="ChatScroll"
+                              VerticalScrollBarVisibility="Auto">
+
+                    <TextBlock x:Name="txtChatHistory"
+                               FontSize="16"
+                               Foreground="#333333"
+                               TextWrapping="Wrap"
+                               LineHeight="28"/>
+                </ScrollViewer>
+            </Border>
+
+            <!-- Bottom Input -->
+            <Grid Grid.Row="2" Margin="20">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Input -->
+                <TextBox x:Name="txtInput"
+                         Grid.Column="0"
+                         Height="45"
+                         FontSize="16"
+                         Padding="10"
+                         Background="White"
+                         BorderBrush="#5DBB8A"
+                         BorderThickness="2"
+                         KeyDown="txtInput_KeyDown"/>
+
+                <!-- Send Button -->
+                <Button x:Name="btnSend"
+                        Grid.Column="1"
+                        Content="SEND"
+                        Margin="10,0,0,0"
+                        FontWeight="Bold"
+                        FontSize="15"
+                        Background="#1E5AA8"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Click="btnSend_Click"/>
+            </Grid>
+        </Grid>
+
+        <!-- ================= STARTUP SCREEN ================= -->
+
+        <Grid x:Name="StartupScreen"
+              Visibility="Visible">
+
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+
+                <!-- Logo -->
+                <Image Source="logo.png"
+                       Width="450"
+                       Height="220"
+                       Margin="0,0,0,20"/>
+
+                <!-- Title -->
+                <TextBlock Text="CYBERSECURITY"
+                           Foreground="#1E5AA8"
+                           FontSize="50"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"/>
+
+                <TextBlock Text="AWARENESS"
+                           Foreground="#2F7A62"
+                           FontSize="28"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,35"/>
+
+                <!-- Name -->
+                <TextBlock Text="Enter your name:"
+                           FontSize="18"
+                           Foreground="#333333"
+                           Margin="0,0,0,10"
+                           HorizontalAlignment="Center"/>
+
+                <TextBox x:Name="txtName"
+                         Width="280"
+                         Height="45"
+                         FontSize="16"
+                         Padding="10"
+                         Background="White"
+                         BorderBrush="#5DBB8A"
+                         BorderThickness="2"
+                         KeyDown="txtName_KeyDown"/>
+
+                <!-- Start Button -->
+                <Button x:Name="btnStart"
+                        Content="START CHAT"
+                        Width="180"
+                        Height="45"
+                        Margin="0,20,0,0"
+                        FontWeight="Bold"
+                        FontSize="16"
+                        Background="#1E5AA8"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Click="btnStart_Click"/>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>
